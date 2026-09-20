@@ -1,0 +1,6 @@
+content/
+build.rb
+README.md
+wrangler.jsonc
+.assetsignore
+.gitignore
