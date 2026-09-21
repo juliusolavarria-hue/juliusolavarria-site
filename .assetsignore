@@ -1,6 +1,9 @@
 content/
+tools/
 build.rb
 README.md
+AGENTS.md
+CLAUDE.md
 wrangler.jsonc
 .assetsignore
 .gitignore
