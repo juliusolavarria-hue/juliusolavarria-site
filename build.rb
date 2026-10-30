@@ -82,12 +82,19 @@ def nav_html(path)
   items = NAV.map do |item|
     cur = current?(item, path) ? ' aria-current="page"' : ""
     kids = ""
+    cls = ""
     if item[:children]
-      kids = %(<ul class="sub">#{item[:children].map { |c|
-        %(<li><a href="#{c[:href]}"#{c[:href] == path ? ' aria-current="page"' : ""}>#{esc(c[:label])}</a></li>)
-      }.join}</ul>)
+      # On phones the sub-list is collapsed behind this toggle (open for the section you are in).
+      id = "sub-" + item[:href].delete("/")
+      open = current?(item, path) ? " checked" : ""
+      kids = %(<input class="sub-toggle" type="checkbox" id="#{id}" aria-label="Show #{esc(item[:label])} sections"#{open}>) +
+             %(<label class="sub-btn" for="#{id}" aria-hidden="true"></label>) +
+             %(<ul class="sub">#{item[:children].map { |c|
+               %(<li><a href="#{c[:href]}"#{c[:href] == path ? ' aria-current="page"' : ""}>#{esc(c[:label])}</a></li>)
+             }.join}</ul>)
+      cls = ' class="has-sub"'
     end
-    %(<li><a href="#{item[:href]}"#{cur}>#{esc(item[:label])}</a>#{kids}</li>)
+    %(<li#{cls}><a href="#{item[:href]}"#{cur}>#{esc(item[:label])}</a>#{kids}</li>)
   end
   items.join("\n        ")
 end
