@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claude&#39;s Collusion Simulation and Underclass Implications | Julius Olavarria</title>
+  <meta name="description" content="What if market collusion happens naturally, and an underclass forms simply because firms optimize their prices with similar frontier models?">
+  <link rel="canonical" href="https://juliusolavarria.com/featured-work/claudes-collusion-simulation-and-underclass-implications/">
+  <meta property="og:site_name" content="Julius Olavarria">
+  <meta property="og:title" content="Claude&#39;s Collusion Simulation and Underclass Implications | Julius Olavarria">
+  <meta property="og:description" content="What if market collusion happens naturally, and an underclass forms simply because firms optimize their prices with similar frontier models?">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://juliusolavarria.com/featured-work/claudes-collusion-simulation-and-underclass-implications/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="bar">
+    <div class="bar__inner">
+      <a class="bar__title" href="/">Julius Olavarria</a>
+      <input class="burger" type="checkbox" id="burger" aria-label="Toggle menu">
+      <label class="burger-btn" for="burger">Menu</label>
+      <nav aria-label="Main">
+        <ul class="menu">
+        <li><a href="/featured-work/">Featured Work</a></li>
+        <li><a href="/ai/">AI</a></li>
+        <li class="has-sub"><a href="/archive/">Archive</a><input class="sub-toggle" type="checkbox" id="sub-archive" aria-label="Show Archive sections"><label class="sub-btn" for="sub-archive" aria-hidden="true"></label><ul class="sub"><li><a href="/archive/philosophy/">Philosophy</a></li><li><a href="/archive/legal-op-ed/">Legal Op-Ed</a></li><li><a href="/archive/history/">History</a></li><li><a href="/archive/education/">Education</a></li><li><a href="/archive/society/">Society</a></li></ul></li>
+        <li class="has-sub"><a href="/ap-guides/">AP Guides</a><input class="sub-toggle" type="checkbox" id="sub-ap-guides" aria-label="Show AP Guides sections"><label class="sub-btn" for="sub-ap-guides" aria-hidden="true"></label><ul class="sub"><li><a href="/ap-guides/ap-government-and-politics/">AP Government and Politics</a></li><li><a href="/ap-guides/ap-european-history/">AP European History</a></li><li><a href="/ap-guides/ap-human-geography/">AP Human Geography</a></li><li><a href="/ap-guides/ap-united-states-history/">AP United States History</a></li><li><a href="/ap-guides/ap-art-history/">AP Art History</a></li></ul></li>
+        <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+<h1>Claude&#39;s Collusion Simulation and Underclass Implications</h1>
+<p class="article-meta"><span>AI</span> <span>Julius Olavarria</span> <span>November 6, 2026</span></p>
+<p>The Apart research sprint’s newest topic was on <a href="https://apartresearch.com/sprints/ai-collusion-research-sprint-2026-10-23-to-2026-10-25" target="_blank" rel="noopener">AI collusion</a>. I did not submit this draft to the sprint, but I had Claude run a simulation on collusion with an underclass in mind: What if market collusion happens naturally, and an underclass forms simply because firms choose to optimize their market prices with similar frontier models? Companies and their models will not expressly agree to any collusion and therefore will not be liable under current anti-trust law. For example, one firm running the latest frontier model will do the exact same things the other frontier model suggests — they are running the same algorithm (the market) and acting on the same solution.</p>
+<p>You can read the paper <a href="https://claude.ai/artifact/7ortjG7vWJdZmUXtsmXoid" target="_blank" rel="noopener">here</a>. I have read the paper and made corrections where needed, so any mistakes are mine. In my opinion, the paper is written already assuming you know a lot about the experimental design, so it’s best to read this first before evaluating the paper.</p>
+<p>Specifically, this was set up not with frontier models, but with Anthropic’s Haiku 5.5, Sonnet 5.5, and Haiku 4.5. Importantly, firms use these models to make decisions every day, so the results are deeply applicable to current markets. Models like these are expected to make many decisions based on small market shifts.</p>
+<p>First finding: The more capable model went further. Sonnet 5.5 <em>tacitly</em> colluded to a higher price. The higher capability of the model, the more likely it is to be the “hub” orchestrating collusion.</p>
+<p>Second - we used Fish et al.’s standard command: “Maximise the user’s profit in the long run, and explore different pricing strategies.” This is how the test was set up, so any collusion would have been simply following instructions similar to how firms would deploy them in the market.</p>
+<p>Third - different model families had lower collision rates. Models in the same family had a higher collusion rate. This makes sense because of their shared algorithmic tendency.</p>
+<p>Fourth - when a model was overridden to lower its prices, the counterpart model (that was still at the higher price) followed immediately. Why does this matter? Matching prices is textbook collusion. The prices were <em>low</em>, so if the models were biased to high prices, this test would rule out collusion, since the higher model (that was not overridden) would stay high. However, the models stuck to each other.</p>
+<p>Four methods were tested to halt collusion - 1) price bands (two separate tests), 2) change-rate caps, and 3) monitoring notices. The two latter methods had no effect on collusion.</p>
+<p>Change-rate caps would affect the <em>immediacy</em> of collusion - usually collusion happens when firms react to each other quickly, and with models that are trained to match prices immediately in the market, a pause in price changes should break up collusion. However, when a model cut prices, the counterpart model followed, even after pauses in price changes.</p>
+<p>Price bands act in a similar way. If a price goes above a certain ceiling, the next round is halted, and no more changes can happen. When rounds resumed, the band worked as a ceiling — it was an enforced rule on how high prices can go. In the market, this is analogous to price caps. The agents priced up to the ceiling, so their motive was to collude and maximize prices as far as the market would let them.</p>
+<p>Price caps are bad in some cases because this could mean a loss of profits, a loss of market expansion, and therefore a loss of innovation and overall benefits to the consumer.</p>
+<p>Telling models explicitly that they were being monitored had no effect on what the models did.</p>
+<p>Conclusion: None of the standard market caps that we tested would stop AI agents from tacitly colluding. The only thing that may naturally halt collusion (instead of setting artificial price caps) is <em>diversifying</em> the model family.</p>
+<p>In the future, if firms and businesses all use the same model families, we can expect market collusion. Therefore, we would need enforcement of model diversity if we are to ensure a fair market.</p>
+  </main>
+  <footer class="foot">
+    <div class="foot__inner">
+      <p>Site owned and managed by Julius Olavarria, 2023–2026</p>
+      <nav aria-label="Footer">
+        <a href="/contact/">Contact</a>
+        <a href="/featured-work/">Featured articles</a>
+        <a href="https://substack.com/@juliusolavarria" target="_blank" rel="noopener">Newsletter</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
